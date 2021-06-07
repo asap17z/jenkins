@@ -2,13 +2,15 @@ pipeline{
     agent any
     stages{
         stage("build"){
-            echo "build for 
-            "Asapz1"
+            step{
+            echo "build for Asapz1"
+            }
             
         }
         stage("deploy"){
+            step{
             echo "Deploying artifact to staging server"
-        
+        }
         }
     }
 }
