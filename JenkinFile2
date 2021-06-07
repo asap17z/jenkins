@@ -1,0 +1,14 @@
+pipeline{
+    agent any
+    stages{
+        stage("build"){
+            echo "build for 
+            "Asapz1"
+            
+        }
+        stage("deploy"){
+            echo "Deploying artifact to staging server"
+        
+        }
+    }
+}
