@@ -1,16 +1,31 @@
 pipeline{
     agent any
     stages{
-        stage("build"){
+        stage("build Application"){
             steps{
-            echo "build for Asapz1"
+            sh("mvn -f maven-samples/pom.xml clean package")
+            }
+
+            steps{
+                
+              archiveArtifacts artifact:"**/*.war"
             }
             
         }
-        stage("deploy"){
+
+        stage("deploy to staging Environment"){
             steps{
-            echo "Deploying artifact to staging server"
+            build job: "Deploy_Application_Staging"
         }
+        }
+        stage("Deploy_Application_Production){
+            steps{
+
+                timeout(time:5, units:'days"){
+                    input message:"Approval Application Production Deployment"
+                }
+                build job :"Deploy_Application_Prod"
+            }
         }
     }
 }
