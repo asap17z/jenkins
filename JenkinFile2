@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("build Application"){
             steps{
-            sh "mvn -f maven-samples/pom.xml clean package"
+            sh "mvn -f maven-samples/single-module/pom.xml clean package"
 
             }
         
