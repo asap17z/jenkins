@@ -5,7 +5,9 @@ pipeline{
             steps{
             sh "mvn -f maven-samples/pom.xml clean package"
 
-            } post{
+            }
+        
+             post{
                 success{
                     archiveArtifacts artifact:"**/*.war"
                      }
