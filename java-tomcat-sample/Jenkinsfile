@@ -1,0 +1,36 @@
+pipeline{
+    agent any
+    stages{
+        stage("build Application"){
+            steps{
+            sh "mvn -f pom.xml clean package"
+
+            }
+        
+             post{
+                success{
+                    archiveArtifacts artifacts: '**/*.war'
+                     }
+            }
+
+        
+            
+        }
+
+        stage("deploy to staging Environment"){
+            steps{
+            echo "deployment to Staging environment"
+            build job: "Deploy_Application_Staging"
+        }
+        }
+        stage("Deploy_Application_Production"){
+            steps{
+
+                timeout(time:5, unit:'DAYS'){
+                    input message:"Approval Application Production Deployment"
+                }
+                build job :"Deploy_Application_Prod"
+            }
+        }
+    }
+}
