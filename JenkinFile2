@@ -21,7 +21,7 @@ pipeline{
         stage("Deploy_Application_Production"){
             steps{
 
-                timeout(time:5, units:'days"){
+                timeout(time:5, units:'days'){
                     input message:"Approval Application Production Deployment"
                 }
                 build job :"Deploy_Application_Prod"
