@@ -3,13 +3,13 @@ pipeline{
     stages{
         stage("build Application"){
             steps{
-            sh "mvn -f pom.xml clean package"
+            sh "mvn -f maven-samples/single-module/pom.xml clean package"
 
             }
         
              post{
                 success{
-                    archiveArtifacts artifacts:'**/*.war'
+                    archiveArtifacts artifacts: '**/*.war'
                      }
             }
 
