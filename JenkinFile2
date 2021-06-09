@@ -18,7 +18,7 @@ pipeline{
             build job: "Deploy_Application_Staging"
         }
         }
-        stage("Deploy_Application_Production){
+        stage("Deploy_Application_Production"){
             steps{
 
                 timeout(time:5, units:'days"){
