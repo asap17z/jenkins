@@ -3,7 +3,8 @@ pipeline{
     stages{
         stage("build Application"){
             steps{
-            sh "mvn -f pom.xml clean package"
+                echo "building application"
+            sh 'mvn -f pom.xml clean package'
 
             }
         
