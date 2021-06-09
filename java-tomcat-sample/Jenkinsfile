@@ -4,7 +4,7 @@ pipeline{
         stage("build Application"){
             steps{
                 echo "building application"
-            sh 'mvn -f pom.xml clean package'
+                sh 'mvn -f pom.xml clean package'
 
             }
         
@@ -20,8 +20,8 @@ pipeline{
 
         stage("deploy to staging Environment"){
             steps{
-            echo "deployment to Staging environment"
-            build job: "Deploy_Application_Staging"
+                echo "deployment to Staging environment"
+                build job: "Deploy_Application_Staging"
         }
         }
         stage("Deploy_Application_Production"){
