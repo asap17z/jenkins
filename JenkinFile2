@@ -4,12 +4,14 @@ pipeline{
         stage("build Application"){
             steps{
             sh "mvn -f maven-samples/pom.xml clean package"
+
+            } post{
+                success{
+                    archiveArtifacts artifact:"**/*.war"
+                     }
             }
 
-            steps{
-                
-              archiveArtifacts artifact:"**/*.war"
-            }
+        
             
         }
 
@@ -21,7 +23,7 @@ pipeline{
         stage("Deploy_Application_Production"){
             steps{
 
-                timeout(time:5, units:'days'){
+                timeout(time:5, unit:'days'){
                     input message:"Approval Application Production Deployment"
                 }
                 build job :"Deploy_Application_Prod"
