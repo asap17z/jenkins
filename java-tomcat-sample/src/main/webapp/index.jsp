@@ -1,6 +1,6 @@
 <html>
     <style>
-        body{background-color: aquamarine;}
+        body{background-color: red;}
         .cen{margin-left:50%;}
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
