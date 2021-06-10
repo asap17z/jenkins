@@ -1,0 +1,37 @@
+pipeline{
+    agent any
+    stages{
+        stage("build Application"){
+            steps{
+                echo "building application"
+                sh 'mvn -f java-tomcat-sample/pom.xml clean package'
+
+            }
+        
+             post{
+                success{
+                    archiveArtifacts artifacts: '**/*.war'
+                     }
+            }
+
+        
+            
+        }
+
+        stage("deploy to staging Environment"){
+            steps{
+                echo "deployment to Staging environment"
+                build job: "deployment_staging_env"
+        }
+        }
+        stage("Deploy_Application_Production"){
+            steps{
+
+                timeout(time:5, unit:'DAYS'){
+                    input message:"Approval Application Production Deployment"
+                }
+                build job :"deployment_production_env"
+            }
+        }
+    }
+}
