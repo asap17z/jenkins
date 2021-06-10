@@ -8,7 +8,7 @@
     
     <nav class="navbar navbar-light"></nav>
 <h2>Hello World! Welcome to Jenkins Training v2 Code Pipeline...</h2>
-<p style="color:red;background-color:blue;">Hello, Thank you for visiting our site. Codepipeline version</p>
+<p style="color:red;background-color:blue;">Hello, Thank you for visiting our site. Codepipeline version 10</p>
 
 <button type="button" class="btn btn-primary cen">Next!</button>
 
