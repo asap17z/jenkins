@@ -5,7 +5,7 @@
         .carossel_1{
             height:30vh;
             width:100%;
-            background-color:
+            background-color:#ffff00;
         }
         .cen{margin-left:50%;}
         
