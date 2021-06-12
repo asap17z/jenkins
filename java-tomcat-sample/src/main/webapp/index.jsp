@@ -3,7 +3,7 @@
 <title>devop testing page</title>
 <style>
         .carossel_1{
-            height:30vh;
+            height:60vh;
             width:100%;
             background-color:#ffff00;
         }
