@@ -7,7 +7,10 @@
             width:100%;
             background-color:#ffff00;
         }
-        .cen{margin-left:50%;}
+        .cen{
+            background-color:#9201a6;
+            margin-left:50%;
+            }
         
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
