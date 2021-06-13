@@ -9,8 +9,8 @@
         }
         .cen{
             background-color:#9201a6;
-            margin-left:40%;
-            margin-right:20%;
+            margin-left:50%;
+            margin-right:40%;
             }
         
     </style>
