@@ -10,6 +10,7 @@
         .cen{
             background-color:#9201a6;
             margin-left:50%;
+            margin-right:50%;
             }
         
     </style>
